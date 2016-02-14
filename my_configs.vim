@@ -7,14 +7,17 @@ let g:ycm_server_log_level = 'debug'
 
 set lines=999 columns=9999
 
+" Change font size in goyo mode
 function! s:goyo_enter()
     set guifont=Inconsolata-dz\ for\ Powerline:h22
     set lines=999 columns=9999
+    set nonumber
 endfunction
 
 function! s:goyo_leave()
     set guifont=Inconsolata-dz\ for\ Powerline:h14
     set lines=999 columns=9999
+    set number
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
@@ -34,4 +37,8 @@ endif
 unmap <space>
 nmap <space> <leader>
 set clipboard=unnamed
+
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_toc_autofit = 1
 
